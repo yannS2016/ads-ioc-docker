@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'ci/Dockerfile'
+      - 'Dockerfile'
       - 'deps/RELEASE_SITE'
   workflow_dispatch:  # allow manual trigger
 
