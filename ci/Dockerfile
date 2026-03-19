@@ -236,6 +236,9 @@ RUN git clone --depth 1 \
     make -C ${GTEST_MODULE_PATH} -j$(nproc) && \
     make -C ${GTEST_MODULE_PATH} clean
 
+COPY ci/setup_ci_env.sh /setup_ci_env.sh
+RUN chmod +x /setup_ci_env.sh && /setup_ci_env.sh
+
 # PATH
 ENV PATH="${BASE_MODULE_PATH}/bin/${EPICS_HOST_ARCH}:${PATH}"
 
