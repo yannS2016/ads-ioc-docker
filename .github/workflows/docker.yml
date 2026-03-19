@@ -37,7 +37,7 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ghcr.io/pcdshub/ads-ioc-docker/ci:latest
-            ghcr.io/pcdshub/ads-ioc-docker/ci:${{ github.sha }}
-          cache-from: type=registry,ref=ghcr.io/pcdshub/ads-ioc-docker/ci:buildcache
-          cache-to: type=registry,ref=ghcr.io/pcdshub/ads-ioc-docker/ci:buildcache,mode=max
+            ghcr.io/${{ github.repository }}/ci:latest
+            ghcr.io/${{ github.repository }}/ci:${{ github.sha }}
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository }}/ci:buildcache
+          cache-to: type=registry,ref=ghcr.io/${{ github.repository }}/ci:buildcache,mode=max
