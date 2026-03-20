@@ -9,7 +9,7 @@
 # This allows the image to both run an IOC and execute unit tests.
 #
 # Production deps:
-#   - EPICS Base  slac-epics/epics-base @ R7.0.3.1-2.0.2
+#   - EPICS Base  slac-epics/epics-base @ R7.0.3.1-2.0
 #   - asyn        slac-epics/asyn       @ R4.42-1.0.0
 #   - calc        slac-epics/calc       @ R3.7-1.0.1
 #   - seq         slac-epics/seq        @ R2.2.4-1.2
@@ -121,10 +121,7 @@ WORKDIR ${EPICS_SITE_TOP}
 
 # RELEASE_SITE - copy and patch to match our BASE_MODULE_VERSION
 COPY deps/RELEASE_SITE ${EPICS_MODULES}/RELEASE_SITE
-RUN sed -i "s|BASE_MODULE_VERSION.*=.*|BASE_MODULE_VERSION = ${BASE_MODULE_VERSION}|" \
-        ${EPICS_MODULES}/RELEASE_SITE && \
-    sed -i "s|EPICS_BASE.*=.*|EPICS_BASE = ${EPICS_BASE}|" \
-        ${EPICS_MODULES}/RELEASE_SITE
+COPY deps/RELEASE_SITE.check ${EPICS_MODULES}/RELEASE_SITE.check
 
 # EPICS Base
 RUN git clone --depth 1 \
