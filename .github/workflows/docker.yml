@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'Dockerfile'
+      - 'ci/Dockerfile'
       - 'deps/RELEASE_SITE'
   workflow_dispatch:  # allow manual trigger
 
@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: Dockerfile
+          file: ci/Dockerfile
           push: true
           tags: |
             ghcr.io/${{ env.REPO }}/ci:latest
