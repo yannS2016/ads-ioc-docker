@@ -29,7 +29,7 @@
 
 FROM rockylinux:9
 
-LABEL maintainer="K Lauer <klauer@slac.stanford.edu> YS Manddza <ysmandza@slac.stanford.edu>"
+LABEL maintainer="YS Mandza <ysmandza@slac.stanford.edu>"
 
 USER root
 
